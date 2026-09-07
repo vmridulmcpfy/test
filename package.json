@@ -1,0 +1,23 @@
+{
+  "name": "test",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A simple sample API to manage system users.",
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "dev:stdio": "tsx src/server.ts --stdio",
+    "dev:http": "tsx src/server.ts --http",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "mcpfy-sdk": "^0.2.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}
