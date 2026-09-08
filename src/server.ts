@@ -121,31 +121,6 @@ server.tool(
 );
 
 
-server.tool(
-  {
-    name: "createUser",
-    description: "Create a new user",
-    schema: z.object({
-    "body": z.record(z.unknown()).describe("Request body"),
-  }),
-  },
-  async (args, ctx) => {
-    const result = await callUpstream({
-      method: "post",
-      url: "https://example.com/users",
-      headers: {},
-      pathParams: {},
-      queryParams: {},
-      bodyInput: {"body":{"type":"object","required":true,"description":"Request body","example":""}},
-      args: args as Record<string, unknown>,
-      ctx,
-    });
-    const payload = result.data;
-    return text(typeof payload === "string" ? payload : JSON.stringify(payload, null, 2));
-  }
-);
-
-
 const transport = process.argv.includes("--http")
   ? "http"
   : process.argv.includes("--stdio")
